@@ -12,37 +12,47 @@ public class Main {
 
         // teha igast funk 2 erineva sisendiga väljakutset
 
-        double kogumaksumus1 = arvutaTaksoMaksumus(3);
-        System.out.println(kogumaksumus1);
-        double kogumaksumus2 = arvutaTaksoMaksumus(2);
-        System.out.println(kogumaksumus2);
-        String hinnang1 = temperatuuriHinnang(-1.2);
-        System.out.println(hinnang1);
-        String hinnang2 = temperatuuriHinnang(2.2);
-        System.out.println(hinnang2);
-        prindiForTsykkel("Pikk sõna");
-        prindiForTsykkel("Lyh");
+        //paarisVoiPaaritu
+        int number1 = 5;
+        int number2 = 14;
+
+        System.out.println(number1 + " on " + paarisVoiPaaritu(number1));
+        System.out.println(number2 + " on " + paarisVoiPaaritu(number2));
+
+        //arvutaKeskmine
+        double num1 = 12.5;
+        double num2 = 9.5;
+
+        double keskmine = arvutaKeskmine(num1, num2);
+        System.out.println("Keskmine väärtus on: " + keskmine);
+
+        //Kas arv on positiivne
+        int number3 = 5;
+        int number4 = -10;
+
+        System.out.println(number3 + " on positiivne: " + onPositiivne(number3));
+        System.out.println(number4 + " on positiivne: " + onPositiivne(number4));
+
 
     }
 
     //siia funktsioonid
 
-    private static double arvutaTaksoMaksumus(int tunnid) { //
-        return 3 + 0.9*tunnid;
-    }
-
-    private static String temperatuuriHinnang(double temp) {
-        if (temp < 0) {
-            return "Vesi on jääs";
+    private static String paarisVoiPaaritu(int number) {
+        if (number % 2 == 0) {
+            return "Paaris";
         } else {
-            return "On vesi";
+            return "Paaritu";
         }
     }
 
-    private static void prindiForTsykkel(String tahtedeArv) {
-        for (int i = 0; i < tahtedeArv.length(); i++) {
-            System.out.println(i);
-        }
+    private static double arvutaKeskmine(double a, double b) {
+        return (a + b) / 2;
     }
+
+    private static boolean onPositiivne(int number) {
+        return number > 0;
+    }
+
 
 }
