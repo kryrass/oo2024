@@ -5,6 +5,7 @@ public class Kasutaja {
     char lyhend;
     double raha;
 
+
     // parem klõps -> Generate -> Constructor
     // shift hoian peal ja vajutan viimasele
     public Kasutaja(String nimi, boolean aktiivne, int vanus, char lyhend, double raha) {
