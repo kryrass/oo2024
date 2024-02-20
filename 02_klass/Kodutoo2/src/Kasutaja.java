@@ -24,4 +24,3 @@ public class Kasutaja {
         raha = raha + summa;
         return raha;
     }
-}
