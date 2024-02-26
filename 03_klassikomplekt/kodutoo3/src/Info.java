@@ -1,14 +1,15 @@
 public class Info {
     String nimetus;
     int ram;
-    String graafikakaart;
+    String graafikaKaart;
 
-    public Info(String nimetus, int ram, String graafikakaart) {
+    public Info(String nimetus, int ram, String graafikaKaart) {
         this.nimetus = nimetus;
         this.ram = ram;
-        this.graafikakaart = graafikakaart;
+        this.graafikaKaart = graafikaKaart;
     }
-    public void muudaNimetus(String uusNimetus){
+
+    public void muudaNimetus(String uusNimetus) {
         nimetus = uusNimetus;
     }
 }

@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -10,8 +8,9 @@ public class Main {
         arvuti.muudaPoodi("Mustamäe");
         arvuti.info.muudaNimetus("Mac Pro");
 
-        Arvuti arvuti2 = new Arvuti(new Info("Dell", 32, "Intel"), 1100, "Ülemiste");
+        Arvuti arvuti2 = new Arvuti(
+                new Info("Dell", 32, "Intel"),
+                1100, "Ülemiste");
         arvuti2.paneAllahindlus(200);
     }
-    
 }

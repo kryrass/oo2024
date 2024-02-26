@@ -34,15 +34,23 @@ public class Main {
         esemed.add(haamer);
         esemed.add(saabas);
 
+        Soiduk auto = new Soiduk(50, "Auto", random, maailm);
+        Soiduk rula = new Soiduk(10, "Rula", random, maailm);
+        Soiduk ratas = new Soiduk(25, "Ratas", random, maailm);
+        List<Soiduk> soidukid = new ArrayList<>();
+        soidukid.add(auto);
+        soidukid.add(rula);
+        soidukid.add(ratas);
+
         Scanner scanner = new Scanner(System.in); // järgmine tund selgitame lähemalt
 
-        maailm.prindiKaart(tegelased, esemed);
+        maailm.prindiKaart(tegelased, esemed, soidukid);
         String sisend = scanner.nextLine();
 
         mangija.liigu(sisend, maailm);
 
         while (!sisend.equals("end")) { // .equals --> ==    !m.equals() --> !=
-            maailm.prindiKaart(tegelased, esemed);
+            maailm.prindiKaart(tegelased, esemed, soidukid);
             sisend = scanner.nextLine();
             mangija.liigu(sisend, maailm);
             for (Ese e: esemed) {
@@ -50,6 +58,13 @@ public class Main {
                    mangija.ese = e;
                     System.out.println("Korjasid üles eseme: " + e.nimetus);
                    break;
+                }
+            }
+            for (Soiduk s : soidukid) {
+                if (mangija.xCoord == s.xCoord && mangija.yCoord == s.yCoord) {
+                    mangija.soiduk = s;
+                    System.out.println("Ronisid sõidukisse: " + s.nimetus);
+                    break;
                 }
             }
             //Javascript: esemed.forEach(e => { if (e.xcoord)})
