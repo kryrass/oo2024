@@ -9,9 +9,7 @@ public class Kursus {
         this.kursuseNimi = kursuseNimi;
         this.registreerunudOpilased = new ArrayList<>();
     }
-
-    // Nested class representing a student
-   Opilane opilane;
+    Opilane opilane;
 
     public void registreerunudOpilased(String opilaseNimi) {
         registreerunudOpilased.add(new Opilane(opilaseNimi));

@@ -3,15 +3,15 @@ public class Main {
         Kursus mataKursus = new Kursus("Sissejuhatus praktilisse matemaatikasse");
         Kursus fyysikaKursus = new Kursus("Füüsika alused");
 
-        Opilane Priidik = new Opilane("Priidik");
-        Opilane Maria = new Opilane("Maria");
-        Opilane Kaarel = new Opilane("Kaarel");
+        Opilane priidik = new Opilane("Priidik");
+        Opilane maria = new Opilane("Maria");
+        Opilane kaarel = new Opilane("Kaarel");
 
-        mataKursus.registreerunudOpilased(Priidik.getNimi());
-        mataKursus.registreerunudOpilased(Maria.getNimi());
-        fyysikaKursus.registreerunudOpilased(Kaarel.getNimi());
+        mataKursus.registreerunudOpilased(priidik.getNimi());
+        mataKursus.registreerunudOpilased(maria.getNimi());
+        fyysikaKursus.registreerunudOpilased(kaarel.getNimi());
 
-        mataKursus.dropOpilane(Maria.getNimi());
+        mataKursus.dropOpilane(maria.getNimi());
 
         mataKursus.vaataRegistreerunudOpilasi();
         fyysikaKursus.vaataRegistreerunudOpilasi();
