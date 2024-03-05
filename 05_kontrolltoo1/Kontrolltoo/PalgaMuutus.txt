@@ -1,0 +1,6 @@
+Algpalgaks on: 3000.0
+Aasta 1: Algne palk = 3090.0, Uus korrutatud palk = 3180.0
+Aasta 2: Algne palk = 3244.5, Uus korrutatud palk = 3498.0000000000005
+Aasta 3: Algne palk = 3309.39, Uus korrutatud palk = 3637.9200000000005
+Aasta 4: Algne palk = 3441.7656, Uus korrutatud palk = 3928.9536000000007
+Aasta 5: Algne palk = 3648.271536, Uus korrutatud palk = 4400.428032000002
