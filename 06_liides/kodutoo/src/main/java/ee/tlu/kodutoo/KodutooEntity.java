@@ -1,14 +1,23 @@
 package ee.tlu.kodutoo;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
+@Entity
+@Table(name = "number")
 public class KodutooEntity {
+    @Id
     private Long id;
     private String nimi;
     private int number;
+
+
+    public KodutooEntity() {
+    }
+
 
     public KodutooEntity(Long id, String nimi, int number) {
         this.id = id;
@@ -16,3 +25,5 @@ public class KodutooEntity {
         this.number = number;
     }
 }
+
+

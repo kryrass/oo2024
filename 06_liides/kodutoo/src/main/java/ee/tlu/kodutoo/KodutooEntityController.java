@@ -1,52 +1,54 @@
 package ee.tlu.kodutoo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/kodutoo")
+@RequestMapping("/api")
 public class KodutooEntityController {
 
-    List<KodutooEntity> entities = new ArrayList<>();
+    @Autowired
+    private KodutooRepository repository; // Autowire the repository
 
-    @GetMapping
-    public List<KodutooEntity> saaEntityd() {
-        return entities;
+    @GetMapping("/numbrid")
+    public List<KodutooEntity> saaNumbrid() {
+        return repository.findAll();
     }
 
-    @PostMapping("/{id}/{nimi}/{number}")
+    //localhost:8080/api/numbrid/6/kuus/6
+    @PostMapping("/numbrid/{id}/{nimi}/{number}")
     public List<KodutooEntity> lisaNumber(
             @PathVariable Long id,
             @PathVariable String nimi,
             @PathVariable int number
     ) {
         KodutooEntity entity = new KodutooEntity(id, nimi, number);
-        entities.add(entity);
-        return entities;
+        repository.save(entity);
+        return repository.findAll();
     }
 
-    @DeleteMapping("/{id}")
-    public void kustutaEntity(@PathVariable Long id) {
-        entities.removeIf(e -> e.getId().equals(id));
+
+    @DeleteMapping("/numbrid/{id}")
+    public void kustutaNumber(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 
-    @PutMapping("/{id}/{nimi}/{number}")
-    public KodutooEntity uuendaEntity(@PathVariable Long id, @PathVariable String nimi, @PathVariable int number) {
-        for (KodutooEntity entity : entities) {
-            if (entity.getId().equals(id)) {
-                entity.setNimi(nimi);
-                entity.setNumber(number);
-                return entity;
-            }
+    @PutMapping("/numbrid/{id}")
+    public KodutooEntity uuendaNumber(@PathVariable Long id, @RequestBody KodutooEntity updatedEntity) {
+        KodutooEntity existingEntity = repository.findById(id).orElse(null);
+        if (existingEntity != null) {
+            existingEntity.setNimi(updatedEntity.getNimi());
+            existingEntity.setNumber(updatedEntity.getNumber());
+            return repository.save(existingEntity);
         }
-        return null; // Kui antud id-ga objekti ei leita
+        return null; // kui entityt selle idga pole
     }
-
 
     @GetMapping("/summa")
     public int saaSumma() {
+        List<KodutooEntity> entities = repository.findAll();
         int total = 0;
         for (KodutooEntity entity : entities) {
             total += entity.getNumber();

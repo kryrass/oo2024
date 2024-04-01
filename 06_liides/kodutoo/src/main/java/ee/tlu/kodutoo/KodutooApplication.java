@@ -1,3 +1,4 @@
+
 package ee.tlu.kodutoo;
 
 import org.springframework.boot.SpringApplication;
