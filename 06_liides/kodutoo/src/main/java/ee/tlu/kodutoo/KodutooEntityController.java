@@ -43,7 +43,7 @@ public class KodutooEntityController {
             existingEntity.setNumber(updatedEntity.getNumber());
             return repository.save(existingEntity);
         }
-        return null; // kui entityt selle idga pole
+        return null; // kui entityt selle id-ga pole
     }
 
     @GetMapping("/summa")

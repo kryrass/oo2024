@@ -8,18 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api")
 public class ToiduaineEntityController {
 
     // ["Kartul", "Vorst"]
     // [{nimi: "Kartul, valk: 0}, {nimi: "Vorst}]
 
-
+@Autowired
     ToiduaineRepository toiduaineRepository;
 
-    public ToiduaineEntityController(ToiduaineRepository toiduaineRepository){
+    /* public ToiduaineEntityController(ToiduaineRepository toiduaineRepository){
         this.toiduaineRepository = toiduaineRepository;
-    }
+    }*/
 
     //List<ToiduaineEntity> toiduained = new ArrayList<>(); //imiteerime andmebaasi
 
