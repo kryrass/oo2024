@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api")
 public class KodutooEntityController {
 
@@ -18,7 +19,7 @@ public class KodutooEntityController {
     }
 
     //localhost:8080/api/numbrid/6/kuus/6
-    @PostMapping("/numbrid/{id}/{nimi}/{number}")
+    /*@PostMapping("/numbrid/{id}/{nimi}/{number}") //body kaudu
     public List<KodutooEntity> lisaNumber(
             @PathVariable Long id,
             @PathVariable String nimi,
@@ -27,7 +28,14 @@ public class KodutooEntityController {
         KodutooEntity entity = new KodutooEntity(id, nimi, number);
         repository.save(entity);
         return repository.findAll();
+    }*/
+    @PostMapping("/numbrid")
+    public List<KodutooEntity> lisaNumber(@RequestBody KodutooEntity entity) {
+        repository.save(entity);
+        return repository.findAll();
     }
+
+
 
 
     @DeleteMapping("/numbrid/{id}")

@@ -91,6 +91,17 @@ public class ToiduaineEntityController {
     public int toiduaineteKoguaerv(){
         return toiduaineRepository.findAll().size();
     }
+
+    @GetMapping("toiduained-valk-min/{minValk}")
+    public List<ToiduaineEntity> toiduainedMinValk(@PathVariable int minValk) {
+        return toiduaineRepository.findAllByValkGreaterThan(minValk);
+    }
+
+    @GetMapping("toiduained-sysivesik/{min}/{max}")
+    public List<ToiduaineEntity> toiduainedSysivesik(@PathVariable int min, @PathVariable int max) {
+        return toiduaineRepository.findAllBySysivesikBetween(min, max);
+    }
+
 }
 
 // 404 - URL ehk API otspunkt on vale

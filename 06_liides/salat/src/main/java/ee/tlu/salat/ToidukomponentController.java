@@ -1,26 +1,47 @@
 package ee.tlu.salat;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class ToidukomponentController {
 
-    List<Toidukomponent> toidukomponendid = new ArrayList<>();
+   @Autowired
+   ToidukomponentRepository toidukomponentRepository;
 
-    @PostMapping("toidukomponent")
-    public List<Toidukomponent> lisaToidukomponent(@RequestBody Toidukomponent komponent) {
-        toidukomponendid.add(komponent);
-        return toidukomponendid;
-    }
+   // Bean ---> automaatselt loodav klass kui rakendus käivitub (new Class();)
+   // @Autowired ---> samaväärne kui allolev constructor, tõmbab Repository siia sisse
 
-    @PutMapping("toidukomponent/{index}")
-    public List<Toidukomponent> muudaToidukomponent(@PathVariable int index, @RequestBody Toidukomponent komponent) {
-        toidukomponendid.set(index, komponent);
-        return toidukomponendid;
-    }
+   //public ToidukomponentController(ToidukomponentRepository toidukomponentRepository) {
+   //    this.toidukomponentRepository = toidukomponentRepository;
+   //}
+
+   // Saaks andmebaasist päringuid teha.
+   // INSERT INTO Toidukomponent VALUES("") --->  repository.save("");
+   // DELETE FROM Toidukomponent WHERE id = 5  ---> repository.deleteById(5);
+   // SELECT * FROM Toidukomponent  ---> repository.findAll();
+
+   // http://localhost:8080/toidukomponendid
+   @GetMapping("toidukomponendid")
+   public List<Toidukomponent> getToidukomponents() {
+      return toidukomponentRepository.findAll();
+   }
+
+   // --> PathVariable: http://localhost:8080/toidukomponendid/4
+   // RequestParam: http://localhost:8080/toidukomponendid?id=4
+   @DeleteMapping("toidukomponendid/{id}")
+   public List<Toidukomponent> deleteToidukomponent(@PathVariable Long id) {
+      toidukomponentRepository.deleteById(id);
+      return toidukomponentRepository.findAll();
+   }
+
+   @PostMapping("toidukomponendid")
+   public List<Toidukomponent> addToidukomponent(@RequestBody Toidukomponent toidukomponent) {
+      toidukomponentRepository.save(toidukomponent);
+      return toidukomponentRepository.findAll();
+   }
 
 }
