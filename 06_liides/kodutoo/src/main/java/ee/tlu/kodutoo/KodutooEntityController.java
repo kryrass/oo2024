@@ -63,4 +63,16 @@ public class KodutooEntityController {
         }
         return total;
     }
+
+    @GetMapping("/numbrid/{minNumber}")
+    public List<KodutooEntity> numberMinNumbrid(@PathVariable int minNumber) {
+        return repository.findAllByNumberLessThan(minNumber);
+    }
+
+    @GetMapping("/numbrid-keskmine/{min}/{max}")
+    public List<KodutooEntity> numberKesk(@PathVariable int min, @PathVariable int max) {
+        return repository.findAllByNumberBetween(min, max);
+    }
+
 }
+

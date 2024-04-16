@@ -1,10 +1,10 @@
-package ee.tlu.salat;
+package ee.tlu.salat.controller;
 
+import ee.tlu.salat.entity.ToiduaineEntity;
+import ee.tlu.salat.repository.ToiduaineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,7 +16,7 @@ public class ToiduaineEntityController {
     // [{nimi: "Kartul, valk: 0}, {nimi: "Vorst}]
 
 @Autowired
-    ToiduaineRepository toiduaineRepository;
+ToiduaineRepository toiduaineRepository;
 
     /* public ToiduaineEntityController(ToiduaineRepository toiduaineRepository){
         this.toiduaineRepository = toiduaineRepository;
@@ -49,7 +49,7 @@ public class ToiduaineEntityController {
 
     @PostMapping("toiduained")
     public List<ToiduaineEntity> lisaToiduaine(@RequestBody ToiduaineEntity toiduaineEntity) {
-        if (toiduaineEntity.valk + toiduaineEntity.rasv + toiduaineEntity.sysivesik > 100) {
+        if (toiduaineEntity.getValk() + toiduaineEntity.getRasv() + toiduaineEntity.getSysivesik() > 100) {
             return toiduaineRepository.findAll();
         }
         //ToiduaineEntity toiduaine = new ToiduaineEntity(nimi, valk, rasv, sysivesik);

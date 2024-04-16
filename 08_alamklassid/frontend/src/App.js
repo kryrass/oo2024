@@ -75,7 +75,7 @@ const kogusRef = useRef();
 
 function lisaTK() {
   const lisatavTK = {
-    "toiduaine": {"nimetus": nimiRef.current.value},
+    "toiduaine": {"nimetus": taNimiRef.current.value},
     "kogus": kogusRef.current.value
   };
 
@@ -117,7 +117,7 @@ function lisaTK() {
       <label>Toidukomponendi nimi (Täpne nimi andmebaasist</label> <br/>
       <input ref={taNimiRef} type="text" /> <br />
       <label>Kogus</label> <br/>
-       <input ref={kogusRef} type="text" /> <br />
+      <input ref={kogusRef} type="text" /> <br />
        <button onClick={() => lisaTK()}>Sisesta</button> <br />
       {toidukomponendid.map(tk => <div>{tk.id} | {tk.toiduaine?.nimetus} | {tk.kogus} | <button onClick={() => kustutaTK(tk.id)}>x</button></div>)}
 
