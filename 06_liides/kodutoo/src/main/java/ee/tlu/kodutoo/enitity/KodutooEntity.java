@@ -1,4 +1,4 @@
-package ee.tlu.kodutoo;
+package ee.tlu.kodutoo.enitity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

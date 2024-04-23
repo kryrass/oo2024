@@ -10,7 +10,7 @@ function App() {
   const nimiRef = useRef();
   const numberRef = useRef();
   //const asukohtRef = useRef();
-  const [numbrikomponendid, setNumbriKomponendid] = useState([]); // Initialize as an empty array
+  const [numbrikomponendid, setNumbriKomponendid] = useState([]); 
 
   useEffect(() => {
     fetch('http://localhost:8080/numbrikomponendid')
@@ -40,8 +40,8 @@ function App() {
       .then(response => {
         if (response.ok) {
           // Update state variables after successful deletion
-          setKogus(prevKogus => prevKogus - 1); // Decrease the count of numbrid by 1
-          setNumbrid(prevNumbrid => prevNumbrid.filter(num => num.id !== primaarvoti)); // Remove the deleted numbrid from the state
+          setKogus(prevKogus => prevKogus - 1);
+          setNumbrid(prevNumbrid => prevNumbrid.filter(num => num.id !== primaarvoti));
         } else {
           console.error('Failed to delete number:', response.status);
         }
@@ -50,6 +50,7 @@ function App() {
         console.error('Error deleting number:', error);
       });
   }
+  
   
   function lisa() {
     const number = {
@@ -70,27 +71,28 @@ function App() {
   }
   
   function kustutaNK(primaarvoti) {
-    fetch('http://localhost:8080/numbrikomponendid/' + primaarvoti, {"method": "DELETE"})
-      .then(response => response.json())
-      .then(json =>  {
-        setNumbriKomponendid(json);
-    })
-    .catch(error => {
-      console.error('Error deleting numbrikomponent:', error);
-    });
-  }
+    console.log("Deleting item with ID:", primaarvoti); // Add this line for debugging
+    if (primaarvoti) {
+        // Existing code for DELETE request
+    } else {
+        console.error('Invalid ID for deletion:', primaarvoti);
+    }
+}
+
+  
+  
   
   const taNimiRef = useRef();
   const asukohtRef = useRef();
   
   function lisaNK() {
     const lisatavNK = {
-      "number": {"nimetus": nimiRef.current.value},
+      "number": {"nimetus": taNimiRef.current.value},
       "asukoht": asukohtRef.current.value
     };
   
   
-    fetch('http://localhost:8080/numbrikomponendid', {
+    fetch('http://localhost:8080/numbrikomponent', {
       method: "POST",
       body: JSON.stringify(lisatavNK),
       headers: {
@@ -133,13 +135,14 @@ function App() {
        <input ref={asukohtRef} type="text" /> <br />
        <button onClick={() => lisaNK()}>Sisesta</button> <br />
       
-      {numbrikomponendid.length > 0 && numbrikomponendid.map(tk => (
-        <div>{tk.id} | {tk.number?.nimi} | {tk.asukoht} | <button onClick={() => kustutaNK(tk.id)}>x</button></div>
-      ))}
+       {numbrikomponendid.length > 0 && numbrikomponendid.map(tk => (
+  <div key={tk.id}>
+    {tk.id} | {tk.nimi} | {tk.asukoht} | <button onClick={() => kustutaNK(tk.id)}>x</button>
+  </div>
+))}
 
     </div>
 
-    
   );
 }
 

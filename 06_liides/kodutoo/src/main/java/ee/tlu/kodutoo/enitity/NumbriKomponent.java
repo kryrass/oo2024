@@ -1,13 +1,10 @@
-package ee.tlu.kodutoo;
-// Mis koosneb toiduainest ja temaga seotud kogusest toidu sees
-// Klassikomplekt -> Kartul+omadused ja mitu grammi
+package ee.tlu.kodutoo.enitity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
+import lombok.Setter;
 
 @AllArgsConstructor
 @Getter

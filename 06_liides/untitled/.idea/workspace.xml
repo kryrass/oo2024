@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2b1d8f29-7e53-4a77-bf7d-0b9736d5b01a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/Pildid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/controller/NumbrikomponentController2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/controller/RestTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/KodutooController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/controller/KodutooController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/KodutooEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/enitity/KodutooEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/KodutooEntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/controller/KodutooEntityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/KodutooRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/repository/KodutooRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/NumbriKomponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/enitity/NumbriKomponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/NumbrikomponentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/controller/NumbrikomponentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/NumbrikomponentController2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/NumbrikomponentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kodutoo/src/main/java/ee/tlu/kodutoo/repository/NumbrikomponentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../08_alamklassid/kodutoo/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../08_alamklassid/kodutoo/src/App.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2fUs42kU22sGs4BQ8klJNK7CK5D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "/Users/kryslinrass/Documents/oo2024/06_liides/untitled/src/Main.java"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b1d8f29-7e53-4a77-bf7d-0b9736d5b01a" name="Changes" comment="" />
+      <created>1713866795627</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713866795627</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

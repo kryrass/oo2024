@@ -1,12 +1,13 @@
-package ee.tlu.kodutoo;
+package ee.tlu.kodutoo.controller;
 
 
-import ee.tlu.kodutoo.NumbriKomponent;
-import ee.tlu.kodutoo.NumbrikomponentRepository;
+import ee.tlu.kodutoo.enitity.NumbriKomponent;
+import ee.tlu.kodutoo.repository.NumbrikomponentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
         import java.util.List;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/")
