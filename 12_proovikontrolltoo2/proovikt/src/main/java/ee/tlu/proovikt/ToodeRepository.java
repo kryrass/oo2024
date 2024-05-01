@@ -15,5 +15,7 @@ public interface ToodeRepository extends JpaRepository<Toode, Long> {
 
     List<Toode> findByNimiStartsWith(String nimi);
 
+    List<Toode> findByKategooria_Id(Long id);
+
 
 }

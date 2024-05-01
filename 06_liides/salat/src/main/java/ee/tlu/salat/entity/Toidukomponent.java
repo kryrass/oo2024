@@ -21,6 +21,9 @@ public class Toidukomponent {
 
     ToiduaineEntity toiduaine;
 
+    //@ManyToOne
+    //Toit toit;
+
 
     int kogus;
 

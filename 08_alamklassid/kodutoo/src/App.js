@@ -13,14 +13,11 @@ function App() {
   const [numbrikomponendid, setNumbriKomponendid] = useState([]); 
 
   useEffect(() => {
-    fetch('http://localhost:8080/numbrikomponendid')
+    fetch('http://localhost:8080/numbrikomponent')
     .then(response => response.json())
     .then(json =>  {
       setNumbriKomponendid(json);
-    })
-    .catch(error => {
-      console.error('Error fetching numbrikomponendid:', error);
-    });
+    }) // body
   }, []);
 
   useEffect(() => {
@@ -29,11 +26,8 @@ function App() {
       .then(json => {
         setKogus(json.length);//lisasin selle ja json yles ja alla
         setNumbrid(json);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+      }) // body
+    }, []);
 
   function kustuta(primaarvoti) {
     fetch('http://localhost:8080/api/numbrid/' + primaarvoti, { method: 'DELETE' })
@@ -54,9 +48,9 @@ function App() {
   
   function lisa() {
     const number = {
-      id: idRef.current.value,
-      nimi: nimiRef.current.value,
-      number: numberRef.current.value,
+      "id": idRef.current.value,
+      "nimi": nimiRef.current.value,
+      "number": numberRef.current.value,
     };
   
     fetch('http://localhost:8080/api/numbrid', {
@@ -71,13 +65,21 @@ function App() {
   }
   
   function kustutaNK(primaarvoti) {
-    console.log("Deleting item with ID:", primaarvoti); // Add this line for debugging
-    if (primaarvoti) {
-        // Existing code for DELETE request
-    } else {
-        console.error('Invalid ID for deletion:', primaarvoti);
-    }
-}
+    fetch('http://localhost:8080/numbrikomponent/' + primaarvoti, { method: "DELETE" })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(json => {
+        setNumbriKomponendid(json);
+      })
+      .catch(error => {
+        console.error('There was a problem with the DELETE request:', error);
+      });
+  }
+  
 
   
   
@@ -87,10 +89,9 @@ function App() {
   
   function lisaNK() {
     const lisatavNK = {
-      "number": {"nimetus": taNimiRef.current.value},
+      "number": {"id": taNimiRef.current.value}, //tanimi asemel taId
       "asukoht": asukohtRef.current.value
     };
-  
   
     fetch('http://localhost:8080/numbrikomponent', {
       method: "POST",
@@ -107,7 +108,8 @@ function App() {
       console.error('Error adding numbrikomponent:', error);
     });
   }
-
+  
+  
   return (
     <div className="App">
        Mul on {kogus} numbrit

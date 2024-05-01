@@ -17,6 +17,8 @@ public class Toit {
     private Long id;
     private String nimetus;
 
-    @ManyToMany
-    List<Toidukomponent> toidukomponendid;
+    //@ManyToMany
+    //List<Toidukomponent> toidukomponendid;
+
+
 }
